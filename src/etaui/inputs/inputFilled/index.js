@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components/native';
 
 const TextInputContainer = styled.View`
+  width: ${props => (props.width ? props.width : 300)}px;
+  height: ${props => (props.height ? props.height : 40)}px;
   border-radius: ${props => (props.borderradius ? props.borderradius : 2)}px;
   margin-vertical: 5px;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-  align-self: center;
-  align-content: flex-end;
-  padding-horizontal: 25px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 0px;
   shadow-color: #ccc;
   shadow-offset: 2px 2px;
   shadow-opacity: 0.4;
@@ -18,7 +18,7 @@ const TextInputContainer = styled.View`
   background-color: #f5f5fa;
 `;
 const TextInput = styled.TextInput.attrs({})`
-  width: ${props => (props.width ? props.width : 300)}px;
+  width: ${props => (props.width && props.rightIcon ? props.width - 40 : 300)}px;
   height: ${props => (props.height ? props.height : 40)}px;
   font-size: ${props => (props.textsize ? props.textsize : 14)}px;
   color: ${props => (props.textColor ? props.textColor : '#333')};
@@ -27,6 +27,7 @@ const TextInput = styled.TextInput.attrs({})`
   align-items: center;
   align-self: center;
   align-content: center;
+  background-color: transparent;
 `;
 
 const ETATextInputFilled = ({
@@ -69,7 +70,7 @@ const ETATextInputFilled = ({
   return (
     <>
       <TextInputContainer
-        style={{width, height, borderradius}}
+        style={{width, height, borderradius, rightIcon}}
         borderradius={borderradius}>
         <TextInput
           value={value}
@@ -110,6 +111,7 @@ const ETATextInputFilled = ({
           // onScroll={}
           textColor={textColor}
           paddingHorizontal={paddingHorizontal || 15}
+          rightIcon
         />
         {rightIcon}
       </TextInputContainer>

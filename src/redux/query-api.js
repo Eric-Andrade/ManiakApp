@@ -3,12 +3,13 @@ import {API_URL} from '@utils/constants';
 
 function* queryAPI({endpoint, method, body = null}) {
   const state = yield select();
+  console.log('queryAPI params: ', {endpoint, body, userToken: state.user?.userToken});
   const res = yield call(makeRequest, {
     endpoint,
     method,
     headers: {
-      Authorization: state.user?.accessToken
-        ? `Bearer ${state.user.accessToken}`
+      Authorization: state.user?.userToken
+        ? `Bearer ${state.user.userToken}`
         : null,
       'Content-Type': 'application/json',
     },

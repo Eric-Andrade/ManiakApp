@@ -1,4 +1,5 @@
-export const API_URL = 'https://jsonplaceholder.typicode.com/users';
+// export const API_URL = 'https://jsonplaceholder.typicode.com/users';
+export const API_URL = 'https://challenge.maniak.co/api/';
 export const fakeavatar =
   'https://elcomercio.pe/resizer/oJXTPUyJwv30CxKHvSSWyGuvfwc=/980x528/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/7MZZLBWAZVBP5DM5DU6UCY4G3I.png';
 export const SLUG = 'React Native';

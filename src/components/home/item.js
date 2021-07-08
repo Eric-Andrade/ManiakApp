@@ -1,11 +1,10 @@
 import React from 'react';
-import {Platform} from 'react-native';
 import styled from 'styled-components/native';
 import {ETASimpleText} from '@etaui';
-import { truncateString } from '@functions'
+import {truncateString} from '@functions';
 
 const Root = styled.View`
-  height: 80px;
+  height: 70px;
   width: 100%;
   flex-direction: row;
   justify-content: flex-start;
@@ -24,7 +23,7 @@ const InformationContainer = styled.View`
   flex-direction: column;
   padding-horizontal: 5px;
   background-color: transparent;
-`
+`;
 
 const UsersItemComponent = ({ title, image, description }) => {
   return (

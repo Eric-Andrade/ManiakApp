@@ -11,8 +11,7 @@ const Root = styled.View`
   align-items: center;
   background-color: transparent;
 `;
-
-const PhotoList = styled.FlatList``
+const PhotoList = styled.FlatList``;
 const EmptyListContainer = styled.View`
   flex: 1;
   flex-direction: column;
@@ -41,7 +40,6 @@ const HomeComponent = ({getDataRequest, data}) => {
 
   useEffect(() => {
     getDataRequest();
-    console.log('[HomeComponent] data: ', { data });
   }, [getDataRequest]);
 
   return (
@@ -50,7 +48,7 @@ const HomeComponent = ({getDataRequest, data}) => {
         <PhotoList
           ref={ref}
           contentContainerStyle={{
-            flex: 1,
+            // flex: 1,
             flexDirection: 'column',
             justifyContent: 'flex-start',
             marginHorizontal: 10,
@@ -66,8 +64,8 @@ const HomeComponent = ({getDataRequest, data}) => {
               <ETASimpleText
                 size={14}
                 weight={Platform.OS === 'ios' ? '400' : '300'}
-                color="#fff"
-                align="left">
+                color='#fff'
+                align='left'>
                 No photos yet
               </ETASimpleText>
             </EmptyListContainer>
@@ -75,7 +73,7 @@ const HomeComponent = ({getDataRequest, data}) => {
           renderItem={({item, i}) => <HomeItemComponent key={i} {...item} />}
         />
       ) : (
-        <ETALoader color="#65D9E4" size={9} />
+        <ETALoader color='#65D9E4' size={9} />
       )}
     </Root>
   );

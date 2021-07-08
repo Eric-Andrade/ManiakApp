@@ -5,6 +5,7 @@ import {ETASimpleText} from '@etaui';
 const Root = styled.View`
   margin-vertical: 5px;
   padding-horizontal: 10px;
+  z-index: 1000
 `;
 const Touchable = styled.TouchableOpacity.attrs({
   underlayColor: 'transparent',
