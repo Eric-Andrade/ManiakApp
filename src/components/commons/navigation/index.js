@@ -14,7 +14,7 @@ import {CHECK_TOKEN, LOGOUT} from '@redux/user/actions';
 const LogoutButton = styled.TouchableOpacity.attrs({
 	underlayColor: 'transparent',
 })`
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
   height: 40px;
   width: 100px;
@@ -116,6 +116,13 @@ const StackNavigation = ({checkToken, logoutUser, userToken}) => {
           component={Navigation}
           options={({navigation, route}) => ({
             title: 'My photos',
+            headerStyle: {
+              height: 120,
+            },
+            headerTitleContainerStyle: {
+              height: 60,
+              justifyContent: 'flex-end',
+            },
             headerShown: true,
             headerTransparent: !true,
             headerRight: () => (

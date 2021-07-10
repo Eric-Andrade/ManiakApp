@@ -8,7 +8,11 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA_REQUEST_SUCCESS:
       const { data } = action.payload;
-      return { data };
+      state.data = []
+      if (data !== []) {
+        state.data = data
+      }
+      return { data: state.data };
     default:
       return state;
   }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import styled from 'styled-components/native';
-import { KeyboardAvoidingView, Platform } from 'react-native'
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import {connect} from 'react-redux';
@@ -121,10 +120,6 @@ const AuthComponent = ({singinUser, data}) => {
 
   return (
     <Root>
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "padding"}
-        style={{ flex: 1 }}
-      >
       <HeadContainer>
         <ETASimpleText
           size={24}
@@ -307,7 +302,6 @@ const AuthComponent = ({singinUser, data}) => {
           )}
         </Formik>
       </FormContainer>
-      </KeyboardAvoidingView>
       <FooterContainer>
         <SignUpContainerButton>
           <ETASimpleText

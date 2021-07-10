@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components/native';
 import {ETASimpleText, ETALoader} from '@etaui';
 import {connect} from 'react-redux';
@@ -37,14 +37,20 @@ const mapDispatchProps = (dispatch, props) => ({
 
 const HomeComponent = ({getDataRequest, data}) => {
   const ref = useRef(null);
+  const [items, setitems ] = useState(null)
 
   useEffect(() => {
     getDataRequest();
+    if (data.length > 0) {
+      setTimeout(() => {
+        setitems(data)
+      }, 1000)
+    }
   }, [getDataRequest]);
 
   return (
     <Root>
-      {data.length > 0 ? (
+      {items !== null ? (
         <PhotoList
           ref={ref}
           contentContainerStyle={{
@@ -53,7 +59,7 @@ const HomeComponent = ({getDataRequest, data}) => {
             justifyContent: 'flex-start',
             marginHorizontal: 10,
           }}
-          data={data}
+          data={items}
           keyExtractor={(item, index) => index.toString()}
           horizontal={!true}
           initialNumToRender={15}
@@ -73,7 +79,7 @@ const HomeComponent = ({getDataRequest, data}) => {
           renderItem={({item, i}) => <HomeItemComponent key={i} {...item} />}
         />
       ) : (
-        <ETALoader color='#65D9E4' size={9} />
+        <ETALoader color='#333' size={9} />
       )}
     </Root>
   );
