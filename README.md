@@ -18,4 +18,5 @@ This app was build with React Native CLI so you will need some things to get a g
 You can find APK to install in *outputs* folder.
 
 ## Preview
+https://media.giphy.com/media/4vjtPjPCu888tTFI8K/source.gif
 ![Android](https://media.giphy.com/media/4vjtPjPCu888tTFI8K/source.gif)
